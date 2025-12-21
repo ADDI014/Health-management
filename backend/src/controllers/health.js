@@ -25,3 +25,17 @@ exports.submitHealth = async (req,res) => {
         res.status(500).json({message : "Health submission failed"});
     }
 }
+
+exports.getHistory = async (req, res) => {
+    try  {
+        const history = await HealthRecord.find({userId : req.user.id}).sort({
+            createdAt : -1
+        });
+        res.json(history);
+    }
+    catch {
+        res.status(500).json({message : "Failed to fetch history"});
+    }
+}
+
+
