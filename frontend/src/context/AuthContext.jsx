@@ -17,7 +17,7 @@ export const AuthProvider = ({children}) => {
         localStorage.setItem("token", token);
         setUser(user);
     }
-    
+
     const logout = () => {
         localStorage.clear();
         setUser(null);
@@ -64,7 +64,7 @@ export const AuthProvider = ({children}) => {
 
 
 
-// # 🔹 1. Importing React tools
+// # 1. Importing React tools
 
 // ```js
 // import { createContext, useEffect, useState } from "react";
@@ -102,7 +102,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔹 2. Creating the Auth Context
+// # 2. Creating the Auth Context
 
 // ```js
 // export const AuthContext = createContext();
@@ -164,7 +164,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔹 4. Creating authentication state
+// # 4. Creating authentication state
 
 // ```js
 //   const [user, setUser] = useState(null);
@@ -190,7 +190,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔹 5. Restoring user on page refresh
+// # 5. Restoring user on page refresh
 
 // ```js
 //   useEffect(() => {
@@ -228,7 +228,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔹 6. The `login` function
+// # 6. The `login` function
 
 // ```js
 //   const login = (user, token) => {
@@ -270,7 +270,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔹 7. The `logout` function
+// # 7. The `logout` function
 
 // ```js
 //   const logout = () => {
@@ -302,7 +302,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔹 8. Providing context values
+// # 8. Providing context values
 
 // ```jsx
 //   return (
@@ -330,13 +330,13 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🔗 HOW THIS CONNECTS TO YOUR AXIOS CODE
+// # HOW THIS CONNECTS TO YOUR AXIOS CODE
 
 // Now the important part.
 
 // ---
 
-// ## 🔄 Flow Perspective (End-to-End)
+// ## Flow Perspective (End-to-End)
 
 // ### 1. User logs in
 
@@ -367,11 +367,11 @@ export const AuthProvider = ({children}) => {
 // * Axios **reads the token**
 // * Axios sends it to backend automatically
 
-// 👉 They communicate via **localStorage**
+// They communicate via **localStorage**
 
 // ---
 
-// ## 🧠 Perspective 1: React Architecture
+// ##  Perspective 1: React Architecture
 
 // | AuthContext           | Axios                 |
 // | --------------------- | --------------------- |
@@ -381,7 +381,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// ## 🔐 Perspective 2: Security & Auth
+// ##  Perspective 2: Security & Auth
 
 // | Step             | Responsibility |
 // | ---------------- | -------------- |
@@ -394,7 +394,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// ## 🏗️ Perspective 3: Clean Architecture
+// ##  Perspective 3: Clean Architecture
 
 // You have **separation of concerns**:
 
@@ -412,7 +412,7 @@ export const AuthProvider = ({children}) => {
 
 // ---
 
-// # 🧠 Mental Model (Important)
+// # Mental Model (Important)
 
 // Think of it like this:
 
@@ -433,5 +433,3 @@ export const AuthProvider = ({children}) => {
 // * It exposes login/logout globally
 // * It feeds the Axios interceptor indirectly
 // * Together, both files create a **complete auth system**
-
----
